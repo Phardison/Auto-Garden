@@ -1,0 +1,7 @@
+from sense_hat import SenseHat
+from time import sleep
+
+while 1 == 1:
+  temp = int(round(sense.get_temperature()))
+  print temp
+  sleep(5)
