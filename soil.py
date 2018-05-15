@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import RPi.GPIO as GPIO
 import time
-import smtplib
 
 
 #GPIO SETUP
@@ -11,14 +10,9 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 warning = 0   
 
-smtp.connect(self._smtp_host, self._smtp_port)
-smtp.ehlo() 
-smtp.starttls() 
-smtp.ehlo()
-      
+
 #setup Email
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.login("rpicompsci@gmail.com", "raspberrypi")
+
 
 
 def callback(channel):
@@ -37,12 +31,11 @@ while True:
         time.sleep(3)
         print warning
         if warning >= 10:
-                server.sendmail("rpicompsci@gmail.com", "phardison@ves.org", "\nNo Water!")
+                print "need water"
         if GPIO.input(21) == 1:
                 warning = warning +1
         elif GPIO.input(21) == 0:
                 warning = 0
                 
   
-
 
