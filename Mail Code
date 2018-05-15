@@ -1,0 +1,15 @@
+import smtplib
+
+content = "message"
+
+mail = smtplib.SMTP("smpt.gmail.com", 465)
+
+mail.ehlo()
+
+mail.starttls()
+
+mail.login("rpicompsci@gmail.com", "raspberrypi")
+
+mail.sendmail("rpicompsci@gmail.com", "rpicompsci@gmail.com", content)
+
+mail.close()
