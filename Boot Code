@@ -1,3 +1,0 @@
-import os
-os.system("cd Desktop/")
-os.system("git clone https://github.com/Phardison/Auto-Garden.git")
